@@ -1,6 +1,6 @@
 <template>
     <div class="vue-daterange-picker">
-        <div class=" reportrange-text" @click="togglePicker">
+        <div class=" reportrange-text1" @click="togglePicker">
             <slot
                     name="input"
                     :startDate="start"
@@ -30,7 +30,7 @@
 
                     <div class="drp-calendar col left" :class="{single: singleDatePicker}">
                         <div class="daterangepicker_input d-none d-sm-block" v-if="false">
-                            <input class="input-mini form-control" type="text" name="daterangepicker_start"
+                            <input class="input-mini " type="text" name="daterangepicker_start"
                                    :value="startText"/>
                             <i class="fa fa-calendar glyphicon glyphicon-calendar"></i>
                         </div>
@@ -58,7 +58,7 @@
 
                     <div class="drp-calendar col right" v-if="!singleDatePicker">
                         <div class="daterangepicker_input" v-if="false">
-                            <input class="input-mini form-control" type="text" name="daterangepicker_end"
+                            <input class="input-mini " type="text" name="daterangepicker_end"
                                    :value="endText"/>
                             <i class="fa fa-calendar glyphicon glyphicon-calendar"></i>
                         </div>

@@ -1,6 +1,6 @@
 <template>
     <div class="vue-daterange-picker">
-        <div class="form-control reportrange-text" @click="togglePicker">
+        <div class=" reportrange-text" @click="togglePicker">
             <slot
                     name="input"
                     :startDate="start"
@@ -15,7 +15,7 @@
         </div>
         <transition name="slide-fade" mode="out-in">
             <div
-                    class="daterangepicker dropdown-menu ltr"
+                    class="daterangepicker  ltr"
                     :class="pickerStyles"
                     v-if="open"
                     v-on-clickaway="clickAway"

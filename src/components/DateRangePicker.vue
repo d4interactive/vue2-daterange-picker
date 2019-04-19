@@ -1,6 +1,6 @@
 <template>
     <div class="vue-daterange-picker">
-        <div class=" reportrange-text1" @click="togglePicker">
+        <div class=" reportrange-text" @click="togglePicker">
             <slot
                     name="input"
                     :startDate="start"
@@ -441,7 +441,7 @@
 <style lang="scss" scoped>
     $week-width: 682px - 628px;
 
-    .reportrange-text {
+    .reportrange-text1 {
         background: #fff;
         cursor: pointer;
         padding: 5px 10px;

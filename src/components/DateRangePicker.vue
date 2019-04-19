@@ -6,6 +6,7 @@
                     :startDate="start"
                     :endDate="end"
                     :ranges="ranges"
+                    :label="label"
             >
                 <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>&nbsp;
                 <span>{{rangeText}}</span>
@@ -207,6 +208,7 @@
         direction: 'ltr',
         format: moment.localeData().longDateFormat('L'),
         separator: ' - ',
+
         applyLabel: 'Apply',
         cancelLabel: 'Cancel',
         weekLabel: 'W',
@@ -236,6 +238,7 @@
       }
       data.in_selection = false
       data.open = false
+      data.label = ''
 
       // update day names order to firstDay
       if (data.locale.firstDay !== 0) {
@@ -340,9 +343,10 @@
           this.open = false
         }
       },
-      clickRange (value) {
+      clickRange (value, key) {
         this.start = new Date(value[0])
         this.end = new Date(value[1])
+        this.label = key
         this.monthDate = new Date(value[0])
         if(this.autoApply)
             this.clickedApply()
@@ -408,6 +412,7 @@
       endDate (value) {
         this.end = new Date(value)
       },
+
       minDate (value) {
         this.changeMonth(this.monthDate);
       },

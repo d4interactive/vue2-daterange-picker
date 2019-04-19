@@ -189,7 +189,7 @@
 }
 
 .daterangepicker td.in-range {
-  background-color: #ebf4f8;
+  background-color: rgba(184, 189, 209, 0.52);
   border-color: transparent;
   color: #000;
   border-radius: 0;
@@ -229,6 +229,8 @@
   height: auto;
   margin: 0;
   cursor: default;
+  background: #eee;
+  border: 1px solid #eee;
 }
 
 .daterangepicker select.monthselect {
@@ -385,3 +387,50 @@
     float: right; }
   .daterangepicker .drp-calendar.left {
     clear: none !important; } }
+
+
+
+
+
+.daterangepicker{
+  box-shadow: 0 3px 6px 0 #b8bdd1;
+  background-color: #ffffff;
+  border: solid 1px rgba(102, 107, 133, 0.05);
+}
+.daterangepicker .ranges li:hover{
+  background: rgba(184, 189, 209, 0.5);
+}
+.daterangepicker .ranges li.active {
+  background-color:#4165ed;
+  color: #fff;
+}
+.daterangepicker:before {
+  border-bottom: 7px solid #ebebeb;
+}
+.daterangepicker td.in-range {
+  background: rgba(184, 189, 209, 0.52);
+  color: #3a4557;
+}
+
+.daterangepicker .drp-buttons .btn.applyBtn {
+  font-weight: normal;
+  padding: 4px 8px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #4165ed;
+}
+.daterangepicker .drp-buttons .btn.cancelBtn {
+  font-weight: normal;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #d5ddf1;
+}
+.daterangepicker .calendar-table th, .daterangepicker .calendar-table td{
+  color: #3a4557;
+}
+.daterangepicker td.active, .daterangepicker td.active:hover {
+  background-color: #4165ed;
+  color: #ffffff;
+}

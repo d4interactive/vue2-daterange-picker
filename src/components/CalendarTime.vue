@@ -130,7 +130,7 @@
         if(this.currentTime.getDate() === todaysDate.getDate() &&
                 this.currentTime.getMonth() === todaysDate.getMonth() &&
                 this.currentTime.getFullYear() === todaysDate.getFullYear()) {
-          if(todaysDate.getMinutes() + 5 > mint)
+          if(todaysDate.getMinutes() + 5 > mint && this.hour <= todaysDate.getHours())
           {
             return true
           }

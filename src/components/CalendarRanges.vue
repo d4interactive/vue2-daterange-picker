@@ -6,6 +6,7 @@
                     @click="$emit('clickRange', value, key,$event)"
                     :data-range-key="key"
                     :key="key"
+                    :class="{active: key === label}"
             >{{key}}</li>
         </ul>
     </div>
@@ -13,6 +14,6 @@
 
 <script>
     export default {
-        props: ['ranges']
+        props: ['ranges', 'label']
     }
 </script>

@@ -10,8 +10,7 @@
                     :label="label"
             >
                 <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>&nbsp;
-
-                <span>{{}}</span>
+                <span>{{rangeText}}</span>
                 <b class="caret"></b>
             </slot>
         </div>
@@ -27,6 +26,7 @@
                         <calendar-ranges class="col-12 col-md-auto"
                                          @clickRange="clickRange"
                                          :ranges="ranges"
+                                         :label="label"
                         ></calendar-ranges>
                     </slot>
 
@@ -345,8 +345,7 @@
           this.open = false
         }
       },
-      clickRange (value, key, e) {
-
+      clickRange (value, key,e) {
           //add and remove active class to current item
           let  elms = e.target.parentElement.querySelectorAll('li');
           for (let i = 0, len = elms.length; i < len; i++) {
@@ -354,7 +353,6 @@
           }
           e.target.classList.add("active");
           //end here
-
         this.start = new Date(value[0])
         this.end = new Date(value[1])
         this.label = key

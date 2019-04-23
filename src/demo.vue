@@ -133,6 +133,7 @@
                                 v-model="dateRange"
                                 :ranges="show_ranges ? undefined : false"
                         >
+
                             <div slot="input" slot-scope="picker" style="min-width: 350px;">
                                 {{ picker.startDate | date }} - {{ picker.endDate | date }}
                             </div>

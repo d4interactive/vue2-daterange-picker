@@ -68,6 +68,10 @@
         type: Boolean,
         default: false,
       },
+        showLabel: {
+            type: Boolean,
+            default: false,
+        },
     },
     methods: {
       dayClass (date) {

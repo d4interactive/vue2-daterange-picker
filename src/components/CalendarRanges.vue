@@ -3,7 +3,7 @@
         <ul v-if="ranges">
             <li
                     v-for="(value, key) in ranges"
-                    @click="$emit('clickRange', value, key)"
+                    @click="$emit('clickRange', value, key,$event)"
                     :data-range-key="key"
                     :key="key"
             >{{key}}</li>

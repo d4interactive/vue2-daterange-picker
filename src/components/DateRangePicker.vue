@@ -1,6 +1,7 @@
 <template>
     <div class="vue-daterange-picker">
         <div class=" reportrange-text" @click="togglePicker">
+
             <slot
                     name="input"
                     :startDate="start"
@@ -9,7 +10,8 @@
                     :label="label"
             >
                 <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>&nbsp;
-                <span>{{rangeText}}</span>
+
+                <span>{{}}</span>
                 <b class="caret"></b>
             </slot>
         </div>
@@ -343,7 +345,16 @@
           this.open = false
         }
       },
-      clickRange (value, key) {
+      clickRange (value, key, e) {
+
+          //add and remove active class to current item
+          let  elms = e.target.parentElement.querySelectorAll('li');
+          for (let i = 0, len = elms.length; i < len; i++) {
+              elms[i].classList.remove('active');
+          }
+          e.target.classList.add("active");
+          //end here
+
         this.start = new Date(value[0])
         this.end = new Date(value[1])
         this.label = key
@@ -441,13 +452,13 @@
 <style lang="scss" scoped>
     $week-width: 682px - 628px;
 
-    .reportrange-text1 {
-        background: #fff;
-        cursor: pointer;
-        padding: 5px 10px;
-        border: 1px solid #ccc;
-        width: 100%;
-    }
+    /*.reportrange-text1 {*/
+        /*background: #fff;*/
+        /*cursor: pointer;*/
+        /*padding: 5px 10px;*/
+        /*border: 1px solid #ccc;*/
+        /*width: 100%;*/
+    /*}*/
 
     .daterangepicker {
         flex-direction: column;

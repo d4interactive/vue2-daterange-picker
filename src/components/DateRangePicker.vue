@@ -250,6 +250,9 @@
       }
       return data
     },
+    created () {
+      this.label = '';
+    },
     methods: {
       changeMonth (newDate) {
         let max = new Date(this.max);

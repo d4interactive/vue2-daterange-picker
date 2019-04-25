@@ -96,7 +96,7 @@
                             class="applyBtn btn btn-sm btn-success"
                             :disabled="in_selection"
                             type="button"
-                            @click="clickedApply"
+                            @click="applyButton"
                     >{{locale.applyLabel}}
                     </button>
                 </div>
@@ -305,7 +305,8 @@
             this.start = this.normalizeDatetime(value, this.start);
           }
           if (!this.in_selection && this.autoApply) {
-            this.clickedApply();
+              this.label = 'Custom Range'
+              this.clickedApply();
           }
         } else {
           this.start = this.normalizeDatetime(value, this.start);
@@ -313,7 +314,8 @@
           if (!this.singleDatePicker) {
             this.in_selection = true
           } else if (this.autoApply) {
-            this.clickedApply();
+              this.label = 'Custom Range'
+              this.clickedApply();
           }
         }
       },
@@ -327,6 +329,7 @@
       },
       clickedApply () {
         this.open = false
+          this.label = 'Custom Range'
         this.$emit('update', {startDate: this.start, endDate: this.end})
       },
       clickAway () {
@@ -367,6 +370,12 @@
 
         this.end = end;
       },
+
+      applyButton()
+      {
+          this.label = 'Custom Range'
+          this.clickedApply()
+      }
     },
     computed: {
       nextMonthDate () {

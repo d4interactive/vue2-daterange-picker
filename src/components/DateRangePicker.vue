@@ -329,7 +329,6 @@
       },
       clickedApply () {
         this.open = false
-          this.label = 'Custom Range'
         this.$emit('update', {startDate: this.start, endDate: this.end})
       },
       clickAway () {

@@ -1,11 +1,11 @@
 <template>
   <div class="calendar-time">
     <select v-model="hour" class="hourselect">
-      <option v-for="h in hours" 
+      <option v-for="h in hours" :disabled="checkTimeDisable(h)"
         :key="h" :value="h">{{h | formatNumber}}</option>
     </select>
     :<select v-model="minute" class="minuteselect">
-      <option v-for="m in minutes" 
+      <option v-for="m in minutes"  :disabled="checkTimeMintDisable(m)"
         :key="m" :value="m" >{{m | formatNumber}}</option>
     </select>
     <template v-if="secondPicker">
@@ -109,6 +109,33 @@
           minutes: this.minute,
           seconds: this.second,
         });
+      },
+
+      checkTimeDisable(hour)
+      {
+        let todaysDate = new Date();
+        if(this.currentTime.getDate() === todaysDate.getDate() &&
+                this.currentTime.getMonth() === todaysDate.getMonth() &&
+                this.currentTime.getFullYear() === todaysDate.getFullYear()) {
+          if(todaysDate.getHours() > hour)
+          {
+            return true
+          }
+        }
+        return false
+      },
+      checkTimeMintDisable(mint)
+      {
+        let todaysDate = new Date();
+        if(this.currentTime.getDate() === todaysDate.getDate() &&
+                this.currentTime.getMonth() === todaysDate.getMonth() &&
+                this.currentTime.getFullYear() === todaysDate.getFullYear()) {
+          if(todaysDate.getMinutes() + 5 > mint && this.hour <= todaysDate.getHours())
+          {
+            return true
+          }
+        }
+        return false
       }
     },
   }

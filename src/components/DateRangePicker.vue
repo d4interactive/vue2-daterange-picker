@@ -346,6 +346,7 @@
         }
       },
       clickRange (value, key) {
+        console.debug('clickRange',key)
         this.start = new Date(value[0])
         this.end = new Date(value[1])
         this.label = key

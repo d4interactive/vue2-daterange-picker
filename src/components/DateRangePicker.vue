@@ -535,7 +535,7 @@
                         flex-basis: auto;
                         border-bottom: 0;
 
-                        ::v-deep ul {
+                        &::v-deep ul {
                             display: block;
                             width: 100%;
                         }

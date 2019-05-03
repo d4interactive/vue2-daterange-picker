@@ -455,7 +455,9 @@
     @import '../assets/daterangepicker.css';
 </style>
 
-<style lang="scss" scoped>
+
+
+<style lang="scss" scoped module>
     $week-width: 682px - 628px;
 
     /*.reportrange-text1 {*/
@@ -544,7 +546,7 @@
             }
         }
 
-        .show-calendar {
+        &.show-calendar {
             display: block;
         }
     }

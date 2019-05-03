@@ -94,7 +94,9 @@
 .daterangepicker.single .drp-selected {
   display: none;
 }
-
+.daterangepicker.show-calendar {
+  display: block;
+}
 .daterangepicker.show-calendar .drp-calendar {
   display: block;
 }
@@ -433,4 +435,122 @@
 .daterangepicker td.active, .daterangepicker td.active:hover {
   background-color: #4165ed;
   color: #ffffff;
+}
+
+
+
+
+
+
+
+
+
+/*.reportrange-text1 {*/
+/*background: #fff;*/
+/*cursor: pointer;*/
+/*padding: 5px 10px;*/
+/*border: 1px solid #ccc;*/
+/*width: 100%;*/
+/*}*/
+.daterangepicker {
+  flex-direction: column;
+  display: flex;
+  width: auto;
+}
+@media screen and (max-width: 768px) {
+  .daterangepicker.show-ranges .drp-calendar.left {
+    border-left: 0px;
+  }
+  .daterangepicker.show-ranges .ranges {
+    border-bottom: 1px solid #ddd;
+  }
+  .daterangepicker.show-ranges .ranges ::v-deep ul {
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+  }
+}
+@media screen and (min-width: 540px) {
+  .daterangepicker {
+    min-width: 486px;
+  }
+  .daterangepicker.show-weeknumbers {
+    min-width: 544px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .daterangepicker.show-ranges {
+    min-width: 628px;
+  }
+  .daterangepicker.show-ranges.show-weeknumbers {
+    min-width: 682px;
+  }
+}
+@media screen and (max-width: 340px) {
+  .daterangepicker.single {
+    min-width: 250px;
+  }
+  .daterangepicker.single.show-weeknumbers {
+    min-width: 304px;
+  }
+}
+@media screen and (min-width: 339px) {
+  .daterangepicker.single {
+    min-width: auto;
+  }
+  .daterangepicker.single.show-ranges {
+    min-width: 328px;
+  }
+  .daterangepicker.single.show-ranges.show-weeknumbers {
+    min-width: 382px;
+  }
+  .daterangepicker.single.show-ranges .drp-calendar.left {
+    border-left: 1px solid #ddd;
+  }
+  .daterangepicker.single.show-ranges .ranges {
+    width: auto;
+    max-width: none;
+    flex-basis: auto;
+    border-bottom: 0;
+  }
+  .daterangepicker.single.show-ranges .ranges ::v-deep ul {
+    display: block;
+    width: 100%;
+  }
+}
+.daterangepicker.show-calendar {
+  display: block;
+}
+.daterangepicker.opensleft {
+  top: 35px;
+  right: 10px;
+  left: auto;
+}
+.daterangepicker.openscenter {
+  top: 35px;
+  right: auto;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.daterangepicker.opensright {
+  top: 35px;
+  left: 10px;
+  right: auto;
+}
+/* Enter and leave animations can use different */
+/* durations and timing functions.              */
+.slide-fade-enter-active {
+  transition: all 0.2s ease;
+}
+.slide-fade-leave-active {
+  transition: all 0.1s cubic-bezier(1, 0.5, 0.8, 1);
+}
+.slide-fade-enter, .slide-fade-leave-to {
+  /* .slide-fade-leave-active for <2.1.8 */
+  transform: translateX(10px);
+  opacity: 0;
+}
+.vue-daterange-picker {
+  position: relative;
+  display: inline-block;
 }

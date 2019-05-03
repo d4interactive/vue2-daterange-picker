@@ -116,7 +116,7 @@
                 <div class="py-5">
                     <h2>Demo <small class="text-muted">(overriden slot "input")</small></h2>
                     <div class="form-group">
-                        <label>Select range: </label>
+                        <label>1Select range: </label>
                         <date-range-picker
                                 :opens="opens"
                                 :startDate="startDate"
@@ -139,6 +139,8 @@
                             </div>
                         </date-range-picker>
                     </div>
+
+
                 </div>
             </div>
         </div>
